@@ -47,6 +47,9 @@ public class Documents {
           lastPos = Pos.TITLE;
           
         } else if (lastPos == Pos.TITLE || lastPos == Pos.CONTENT) {
+          if (parts.content.length() > 0) {
+            parts.content.append('\n');
+          }
           parts.content.append(curln);
           lastPos = Pos.CONTENT;
         }
